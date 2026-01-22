@@ -5,90 +5,142 @@
 <title>Mis XV Años - Karol Lizeth</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Georgia, serif;
-  background: linear-gradient(180deg, #7a0000, #c9a227);
-  color: white;
-  text-align: center;
+body{
+  margin:0;
+  font-family:'Georgia',serif;
+  background:linear-gradient(180deg,#5a0000,#c9a227);
+  color:white;
+  text-align:center;
 }
 
-.container {
-  background: rgba(0,0,0,0.6);
-  margin: 20px;
-  padding: 30px;
-  border-radius: 25px;
-  box-shadow: 0 0 20px gold;
+.cover{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  animation:fadeIn 2s;
 }
 
-h1 { color: gold; font-size: 40px; }
-h2 { font-size: 26px; }
+.cover h1{
+  color:gold;
+  font-size:48px;
+}
 
-.section { margin: 30px 0; }
-.gold { color: gold; font-weight: bold; }
+.cover button{
+  margin-top:20px;
+  padding:15px 30px;
+  font-size:18px;
+  border:none;
+  border-radius:30px;
+  background:gold;
+  color:#5a0000;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.invitation{
+  display:none;
+  padding:30px;
+}
+
+.container{
+  background:rgba(0,0,0,0.6);
+  padding:30px;
+  border-radius:25px;
+  box-shadow:0 0 25px gold;
+  animation:fadeIn 2s;
+}
+
+h2{font-size:28px;}
+.gold{color:gold;font-weight:bold;}
+.section{margin:35px 0;}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<!-- 🎵 Música -->
+<audio autoplay loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PORTADA -->
+<div class="cover" id="cover">
   <h1>Mis XV Años</h1>
-  <h2>Karol Lizeth Aguirre Roa</h2>
-
-  <div class="section">
-    <p>Con la bendición de Dios y el amor de mi familia</p>
-    <p>te invito a celebrar este día tan especial.</p>
-  </div>
-
-  <div class="section">
-    <p class="gold">📅 Fecha</p>
-    <p>20 de Marzo del 2026</p>
-
-    <p class="gold">⏰ Hora</p>
-    <p>8:00 p.m.</p>
-  </div>
-
-  <div class="section">
-    <p class="gold">🎉 ¡Te esperamos!</p>
-  </div>
+  <h2>Karol Lizeth</h2>
+  <button onclick="openInvite()">Abrir invitación</button>
 </div>
-<div class="section">
-  <p class="gold">⏳ Cuenta Regresiva</p>
-  <div id="countdown" style="font-size:22px;color:gold;"></div>
+
+<!-- INVITACIÓN -->
+<div class="invitation" id="invite">
+  <div class="container">
+
+    <h1 class="gold">Mis XV Años</h1>
+    <h2>Karol Lizeth Aguirre Roa</h2>
+
+    <div class="section">
+      <p>Con la bendición de Dios y el amor de mi familia</p>
+      <p>te invito a celebrar este día tan especial.</p>
+    </div>
+
+    <div class="section">
+      <p class="gold">📅 Fecha</p>
+      <p>20 de Marzo del 2026</p>
+
+      <p class="gold">⏰ Hora</p>
+      <p>8:00 p.m.</p>
+    </div>
+
+    <div class="section">
+      <p class="gold">⏳ Cuenta regresiva</p>
+      <div id="countdown"></div>
+    </div>
+
+    <div class="section">
+      <p class="gold">📸 Galería</p>
+      <img src="foto1.jpg" width="90%" style="border-radius:15px;margin:10px;">
+    </div>
+
+    <div class="section">
+      <p class="gold">💌 Confirmar asistencia</p>
+      <a href="https://wa.me/57TU_NUMERO?text=Confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Karol%20Lizeth"
+         style="background:gold;color:#5a0000;padding:15px 25px;
+         border-radius:30px;text-decoration:none;font-weight:bold;">
+         Confirmar por WhatsApp
+      </a>
+    </div>
+
+  </div>
 </div>
 
 <script>
-const eventDate = new Date("March 20, 2026 17:30:00").getTime();
+function openInvite(){
+  document.getElementById("cover").style.display="none";
+  document.getElementById("invite").style.display="block";
+}
 
-setInterval(() => {
-  const now = new Date().getTime();
-  const diff = eventDate - now;
-
-  if (diff < 0) {
-    document.getElementById("countdown").innerHTML = "¡Hoy es el gran día!";
+const eventDate = new Date("March 20, 2026 20:00:00").getTime();
+setInterval(()=>{
+  const now=new Date().getTime();
+  const d=eventDate-now;
+  if(d<0){
+    document.getElementById("countdown").innerHTML="¡Hoy es el gran día!";
     return;
   }
-
-  const d = Math.floor(diff / (1000*60*60*24));
-  const h = Math.floor((diff / (1000*60*60)) % 24);
-  const m = Math.floor((diff / (1000*60)) % 60);
-  const s = Math.floor((diff / 1000) % 60);
-
-  document.getElementById("countdown").innerHTML =
-    d + " días " + h + " h " + m + " m " + s + " s";
-}, 1000);
+  const days=Math.floor(d/(1000*60*60*24));
+  const h=Math.floor((d/(1000*60*60))%24);
+  const m=Math.floor((d/(1000*60))%60);
+  const s=Math.floor((d/1000)%60);
+  document.getElementById("countdown").innerHTML=
+    days+" días "+h+" h "+m+" m "+s+" s";
+},1000);
 </script>
-<div class="section">
-  <p class="gold">📸 Galería</p>
-  <img src="foto1.jpg" width="90%" style="border-radius:15px;margin:10px;">
-</div>
-  <div class="section">
-  <p class="gold">💌 Confirmar asistencia</p>
-  <a href="https://wa.me/573104188779?text=Hola,%20confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Karol%20Lizeth"
-     style="background:gold;color:#7a0000;padding:15px 25px;
-     border-radius:30px;text-decoration:none;font-weight:bold;">
-     Confirmar por WhatsApp
-  </a>
-</div>
+
 </body>
 </html>
