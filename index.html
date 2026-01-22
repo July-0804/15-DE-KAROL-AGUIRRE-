@@ -74,8 +74,16 @@ body{
 }
 
 .crown{
-  font-size:70px;
-  animation:float 3s ease-in-out infinite;
+  width:220px;
+  margin-bottom:20px;
+  animation:float 4s ease-in-out infinite, glow 2s ease-in-out infinite;
+}
+
+@keyframes glow{
+  0%{filter:drop-shadow(0 0 5px gold);}
+  50%{filter:drop-shadow(0 0 20px gold);}
+  100%{filter:drop-shadow(0 0 5px gold);}
+}
 }
 
 @keyframes float{
