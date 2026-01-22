@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+[9:52 p. m., 21/1/2026] HIJA ALISSON: <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -48,13 +48,83 @@ body{
   background:rgba(0,0,0,0.6);
   padding:30px;
   border-radius:25px;
+  box-shadow…
+[9:57 p. m., 21/1/2026] HIJA ALISSON: <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mis XV Años - Karol Lizeth</title>
+
+<style>
+body{
+  margin:0;
+  font-family:'Georgia',serif;
+  background:linear-gradient(180deg,#4b0000,#c9a227);
+  color:white;
+  text-align:center;
+}
+
+.cover{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  animation:fadeIn 2s;
+}
+
+.crown{
+  font-size:70px;
+  animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+  100%{transform:translateY(0);}
+}
+
+.cover h1{color:gold;font-size:46px;}
+.cover button{
+  margin-top:20px;
+  padding:15px 35px;
+  font-size:18px;
+  border:none;
+  border-radius:30px;
+  background:gold;
+  color:#4b0000;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.invitation{display:none;padding:30px;}
+
+.container{
+  background:rgba(0,0,0,0.6);
+  padding:30px;
+  border-radius:25px;
   box-shadow:0 0 25px gold;
   animation:fadeIn 2s;
 }
 
-h2{font-size:28px;}
 .gold{color:gold;font-weight:bold;}
 .section{margin:35px 0;}
+
+.calendar{
+  background:white;
+  color:#4b0000;
+  display:inline-block;
+  padding:15px 25px;
+  border-radius:15px;
+  font-weight:bold;
+}
+
+iframe{
+  width:100%;
+  height:300px;
+  border:none;
+  border-radius:20px;
+}
 
 @keyframes fadeIn{
   from{opacity:0;transform:translateY(20px);}
@@ -72,51 +142,70 @@ h2{font-size:28px;}
 
 <!-- PORTADA -->
 <div class="cover" id="cover">
+  <div class="crown">👑</div>
   <h1>Mis XV Años</h1>
   <h2>Karol Lizeth</h2>
+  <p>Bienvenidos a este momento tan especial</p>
   <button onclick="openInvite()">Abrir invitación</button>
 </div>
 
 <!-- INVITACIÓN -->
 <div class="invitation" id="invite">
-  <div class="container">
+<div class="container">
 
-    <h1 class="gold">Mis XV Años</h1>
-    <h2>Karol Lizeth Aguirre Roa</h2>
+<h1 class="gold">Mis XV Años</h1>
+<h2>Karol Lizeth Aguirre Roa</h2>
 
-    <div class="section">
-      <p>Con la bendición de Dios y el amor de mi familia</p>
-      <p>te invito a celebrar este día tan especial.</p>
-    </div>
+<div class="section">
+<p>Con la bendición de Dios y el amor de mi familia,</p>
+<p>te invito a celebrar este día tan especial.</p>
+</div>
 
-    <div class="section">
-      <p class="gold">📅 Fecha</p>
-      <p>20 de Marzo del 2026</p>
+<div class="section">
+<p class="gold">💌 Mensaje de mis padres</p>
+<p>
+Con inmenso amor y gratitud a Dios,<br>
+acompañamos a nuestra hija en este momento tan importante de su vida.<br>
+Gracias por ser parte de este sueño.
+</p>
+</div>
 
-      <p class="gold">⏰ Hora</p>
-      <p>8:00 p.m.</p>
-    </div>
+<div class="section">
+<p class="gold">📅 Fecha</p>
+<div class="calendar">20 de Marzo de 2026</div>
 
-    <div class="section">
-      <p class="gold">⏳ Cuenta regresiva</p>
-      <div id="countdown"></div>
-    </div>
+<p class="gold" style="margin-top:15px;">⏰ Hora</p>
+<p>8:00 p.m.</p>
+</div>
 
-    <div class="section">
-      <p class="gold">📸 Galería</p>
-      <img src="foto1.jpg" width="90%" style="border-radius:15px;margin:10px;">
-    </div>
+<div class="section">
+<p class="gold">⏳ Cuenta Regresiva</p>
+<div id="countdown"></div>
+</div>
 
-    <div class="section">
-      <p class="gold">💌 Confirmar asistencia</p>
-      <a href="https://wa.me/57TU_NUMERO?text=Confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Karol%20Lizeth"
-         style="background:gold;color:#5a0000;padding:15px 25px;
-         border-radius:30px;text-decoration:none;font-weight:bold;">
-         Confirmar por WhatsApp
-      </a>
-    </div>
+<div class="section">
+<p class="gold">📍 Lugar</p>
+<p>Salón de Eventos</p>
+<iframe 
+src="https://www.google.com/maps?q=salon%20de%20eventos&output=embed">
+</iframe>
+</div>
 
-  </div>
+<div class="section">
+<p class="gold">📸 Galería</p>
+<img src="foto1.jpg" width="90%" style="border-radius:15px;margin:10px;">
+</div>
+
+<div class="section">
+<p class="gold">💌 Confirmar asistencia</p>
+<a href="https://wa.me/57TU_NUMERO?text=Confirmo%20mi%20asistencia%20a%20los%20XV%20de%20Karol%20Lizeth"
+style="background:gold;color:#4b0000;padding:15px 30px;
+border-radius:30px;text-decoration:none;font-weight:bold;">
+Confirmar por WhatsApp
+</a>
+</div>
+
+</div>
 </div>
 
 <script>
@@ -138,7 +227,7 @@ setInterval(()=>{
   const m=Math.floor((d/(1000*60))%60);
   const s=Math.floor((d/1000)%60);
   document.getElementById("countdown").innerHTML=
-    days+" días "+h+" h "+m+" m "+s+" s";
+  days+" días "+h+" h "+m+" m "+s+" s";
 },1000);
 </script>
 
