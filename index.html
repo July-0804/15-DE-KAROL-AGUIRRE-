@@ -45,13 +45,38 @@ h2 { font-size: 26px; }
     <p>20 de Marzo del 2026</p>
 
     <p class="gold">⏰ Hora</p>
-    <p>5:30 p.m.</p>
+    <p>8:00 p.m.</p>
   </div>
 
   <div class="section">
     <p class="gold">🎉 ¡Te esperamos!</p>
   </div>
 </div>
+<div class="section">
+  <p class="gold">⏳ Cuenta Regresiva</p>
+  <div id="countdown" style="font-size:22px;color:gold;"></div>
+</div>
 
+<script>
+const eventDate = new Date("March 20, 2026 17:30:00").getTime();
+
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = eventDate - now;
+
+  if (diff < 0) {
+    document.getElementById("countdown").innerHTML = "¡Hoy es el gran día!";
+    return;
+  }
+
+  const d = Math.floor(diff / (1000*60*60*24));
+  const h = Math.floor((diff / (1000*60*60)) % 24);
+  const m = Math.floor((diff / (1000*60)) % 60);
+  const s = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("countdown").innerHTML =
+    d + " días " + h + " h " + m + " m " + s + " s";
+}, 1000);
+</script>
 </body>
 </html>
